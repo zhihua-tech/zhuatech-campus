@@ -33,6 +33,12 @@ ZhuaTech CAMPUS 是知华科技推出的智慧校园运营系统社区源码版�
 
 后端还提供运营风险评估接口，结合积压、延期、关键事项、容量利用率与数据完整度给出分级结果和行动建议。该结果仅用于软件学习演示，不替代企业正式风控与业务决策。
 
+## 新增：校园服务事件智能分级
+
+管理端可根据事件严重度、影响人数、安全属性、无障碍通行影响和持续时长，对校园服务事件计算 0–100 分并输出 `EMERGENCY / HIGH / NORMAL / LOW` 优先级、目标响应分钟数和联动建议。该能力适用于报修、设施、通行和校园服务事项的统一分派。
+
+接口：`POST /api/admin/service-triage`。
+
 ## 技术结构
 
 ```text
@@ -101,4 +107,3 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 本仓库不包含真实业务数据、真实生产接口凭据或生产配置。请勿提交个人隐私与业务敏感信息、访问令牌、私钥或真实业务数据。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告；参与开发前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 关键词：知华科技 CAMPUS、智慧校园系统、校园运营管理、校园服务平台、Java 校园系统、Spring Boot CAMPUS、Vue 企业管理系统、上海软件定制开发。
-

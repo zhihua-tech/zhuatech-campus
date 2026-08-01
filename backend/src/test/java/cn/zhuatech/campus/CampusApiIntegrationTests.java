@@ -37,4 +37,14 @@ class CampusApiIntegrationTests {
     @Test void anonymousRequestIsRejected() throws Exception {
         mvc.perform(get("/api/workspace/tasks")).andExpect(status().isUnauthorized());
     }
+
+    @Test void adminCanTriageCampusServiceIncident() throws Exception {
+        mvc.perform(post("/api/admin/service-triage").with(httpBasic("admin", "admin123"))
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"severity\":4,\"affectedPeople\":120,\"safetyRelated\":true,\"accessibilityBlocked\":true,\"hoursOpen\":48}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.data.score").value(100))
+            .andExpect(jsonPath("$.data.priority").value("EMERGENCY"))
+            .andExpect(jsonPath("$.data.responseMinutes").value(10));
+    }
 }
