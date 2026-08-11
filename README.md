@@ -107,3 +107,7 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 本仓库不包含真实业务数据、真实生产接口凭据或生产配置。请勿提交个人隐私与业务敏感信息、访问令牌、私钥或真实业务数据。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告；参与开发前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 关键词：知华科技 CAMPUS、智慧校园系统、校园运营管理、校园服务平台、Java 校园系统、Spring Boot CAMPUS、Vue 企业管理系统、上海软件定制开发。
+
+## 校园人流压力预测
+
+新增 `POST /api/campus/insights/crowd-pressure`，根据当前人数、短时到离场预测、安全容量、出口和现场保障，返回 `NORMAL`、`CONTROL` 或 `EVACUATE`。
