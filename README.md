@@ -111,3 +111,7 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 ## 校园人流压力预测
 
 新增 `POST /api/campus/insights/crowd-pressure`，根据当前人数、短时到离场预测、安全容量、出口和现场保障，返回 `NORMAL`、`CONTROL` 或 `EVACUATE`。
+
+## 企业级园区活动安全授权
+
+新增 `POST /api/enterprise/campus/event-safety-authorization`，覆盖许可、容量、疏散、应急、门禁、医疗、天气、交通和通信，返回 `AUTHORIZE / CONDITIONAL / BLOCKED`。详见 [活动安全说明](docs/ENTERPRISE_EVENT_SAFETY.md)。
