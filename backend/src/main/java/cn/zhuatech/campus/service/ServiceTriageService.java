@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ServiceTriageService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public TriageResult triage(TriageRequest request) {
         int score = request.severity() * 12
             + Math.min(20, request.affectedPeople() / 10)
@@ -32,9 +38,15 @@ public class ServiceTriageService {
         return new TriageResult(score, priority, responseMinutes, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record TriageRequest(@NotNull @Min(1) @Max(5) Integer severity,
         @NotNull @Min(0) @Max(100000) Integer affectedPeople,
         @NotNull Boolean safetyRelated, @NotNull Boolean accessibilityBlocked,
         @NotNull @Min(0) @Max(10000) Integer hoursOpen) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record TriageResult(int score, String priority, int responseMinutes, List<String> actions) {}
 }
