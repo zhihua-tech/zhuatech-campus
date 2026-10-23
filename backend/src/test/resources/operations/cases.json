@@ -1,0 +1,50 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "caseCapacity": "#36",
+      "totalDemand": "#33",
+      "extraWindowsNeeded": "0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "walkIns": "20"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "caseShortfall": "#9",
+      "extraWindowsNeeded": "1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "openMinutes": "0"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "extraWindowsNeeded": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minutesPerCase": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "booked": "0",
+      "walkIns": "0"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  }
+]
